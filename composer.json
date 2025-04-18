@@ -1,10 +1,9 @@
 {
-    "name": "cc-license-generator",
+    "name": "my/cc-license-generator",
     "description": "A web application for generating CC license documents",
     "type": "project",
     "require": {
-        "php": "^8.4",
-        "dompdf/dompdf": "^2.0",
+        "php": "^8.1",
         "slim/slim": "^4.0",
         "slim/psr7": "^1.6",
         "slim/php-view": "^3.2",

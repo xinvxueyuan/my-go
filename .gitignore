@@ -6,5 +6,4 @@
 *.log
 *.sqlite
 *.sqlite3
-/public/pdf/*
-!/public/pdf/.gitkeep
+*.html

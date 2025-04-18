@@ -6,26 +6,16 @@ use Dompdf\Options;
 
 class LicenseGenerator {
     private $data;
-    private $dompdf;
 
     public function __construct(array $data) {
         $this->data = $data;
-        $options = new Options();
-        $options->set('isHtml5ParserEnabled', true);
-        $options->set('isPhpEnabled', true);
-        
-        $this->dompdf = new Dompdf($options);
     }
 
     public function generate(): string {
         $html = $this->generateHtml();
-        $this->dompdf->loadHtml($html);
-        $this->dompdf->setPaper('A4');
-        $this->dompdf->render();
-
-        $filename = sprintf('license_%s_%s.pdf', $this->data['author_name'], date('Ymd_His'));
-        $filepath = __DIR__ . '/../public/pdf/' . $filename;
-        file_put_contents($filepath, $this->dompdf->output());
+        $filename = sprintf('license_%s_%s.html', $this->data['author_name'], date('Ymd_His'));
+        $filepath = __DIR__ . '/../public/html/' . $filename;
+        file_put_contents($filepath, $html);
 
         return $filename;
     }
