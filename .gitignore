@@ -1,0 +1,10 @@
+/vendor/
+/node_modules/
+.env
+.idea/
+.vscode/
+*.log
+*.sqlite
+*.sqlite3
+/public/pdf/*
+!/public/pdf/.gitkeep
